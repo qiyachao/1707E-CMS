@@ -13,7 +13,7 @@ import com.bw.cms.domain.User;
 import com.bw.cms.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-
+@RequestMapping("user")
 @Controller
 public class UserController {
 

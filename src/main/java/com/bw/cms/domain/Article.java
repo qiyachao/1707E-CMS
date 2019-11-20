@@ -40,8 +40,38 @@ public class Article implements Serializable{
     private String keywords;
 
     private String original;
+    
+    private Channel channel;
 
-    public Integer getId() {
+    private Category category;
+
+    private User user;
+    
+    public Channel getChannel() {
+		return channel;
+	}
+
+	public void setChannel(Channel channel) {
+		this.channel = channel;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Integer getId() {
         return id;
     }
 

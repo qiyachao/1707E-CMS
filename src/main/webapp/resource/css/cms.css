@@ -43,7 +43,7 @@ ol,ol li{padding: 0;margin: 0}
 }
 
 .passport_bg {
-	min-height: 400px;
+	min-height: 500px;
 	background-image: url("/resource/images/bg01.jpg");
 	background-position: center;
 }
@@ -62,7 +62,7 @@ ol,ol li{padding: 0;margin: 0}
 .cms-list-group-item-action:hover {
   z-index: 1;
   text-decoration: none;
-  background-color: #b0ae4f;
+  background-color: #ff0000;
 }
 .cms-list-group-item-action:hover a {
   text-decoration: none;
@@ -72,7 +72,7 @@ ol,ol li{padding: 0;margin: 0}
 .cms-list-group-item-active {
   z-index: 2;
   color: #fff;
-  background-color: #ff0000;
+  background-color: #00ffff;
   border-color: #007bff;
 }
 

@@ -17,6 +17,9 @@
     <result column="content_type" property="contentType" jdbcType="INTEGER" />
     <result column="keywords" property="keywords" jdbcType="VARCHAR" />
     <result column="original" property="original" jdbcType="VARCHAR" />
+    <association property="channel" javaType="channel" select="com.bw.cms.dao.ChannelMapper.selectByPrimaryKey" column="channel_id"></association>
+    <association property="category" javaType="category" select="com.bw.cms.dao.CategoryMapper.selectByPrimaryKey" column="category_id"></association>
+    <association property="user" javaType="user" select="com.bw.cms.dao.UserMapper.selectByPrimaryKey" column="user_id"></association>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.bw.cms.domain.ArticleWithBLOBs" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
@@ -31,6 +34,30 @@
   </sql>
   <select id="selects" resultMap="BaseResultMap">
   	select <include refid="Base_Column_List"/> from cms_article
+  	<where>
+  	<if test="title != null and title !=''">
+  	and title like "%"#{title}"%"
+  	</if>
+  	<if test="status !=null">
+  	and status=#{status}
+  	</if>
+  	<if test="userId!=null">
+  	and user_id =#{userId}
+  	</if>
+  	<if test="channelId!=null">
+  	and channel_id =#{channelId}
+  	</if>
+  	<if test="categoryId!=null">
+  	and category_id =#{categoryId}
+  	</if>
+  	<if test="hot!=null">
+  	and hot =#{hot}
+  	</if>
+  	<if test="deleted!=null">
+  	and deleted =#{deleted}
+  	</if>
+  	</where>
+  	order by updated desc
   </select>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 

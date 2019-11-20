@@ -18,7 +18,7 @@
 <script type="text/javascript">
 	function query(){
 		//在中间区域加载用户页面
-		$("#center").load("/users?usernmae="+$("[name='username']").val());
+		$("#center").load("/user/users?usernmae="+$("[name='username']").val());
 	}
 </script>
 </head>
@@ -73,7 +73,7 @@
 		  //更改当前状态 如果当前状态为正常,则改为停用.如果是停用则改为正常
 		var locked =$(obj).text()=="正常"?"1":"0";
 		$.post(
-		"/update",
+		"/user/update",
 		{id:id,locked:locked},
 		function(flag){
 			if(flag){
@@ -86,11 +86,9 @@
 		)
 	}
 	//分页点击事件
-	$(function(){
-		$(".page-link").click(function(){
-			var url = $(this).attr("data");
-			$("#center").load(url);
-		})
-	})
+	function goPage(page){
+		var url = "/user/users?page="+page+"&username="+$("[name='username']").val();
+		$("#center").load(url);
+	}
 </script>
 </html>
