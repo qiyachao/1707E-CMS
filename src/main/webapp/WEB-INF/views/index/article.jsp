@@ -15,9 +15,25 @@
 <script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/resource/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	function query(){
-		location.href="/my";
-	}
+function collect() {
+	var text = '${article.title}';//收藏的标题
+	var url = window.location.href;//收藏的地址
+
+	$.post(
+			"/collect", 
+	{text : text,url : url}, 
+	function(flag) {
+		if (flag.code == 0) {
+			alert(flag.msg);
+			$("#mc").html(
+					"<span style='font-size: 20px;color: red'>★(已收藏)</span>")
+		} else {
+			alert(flag.msg);
+
+		}
+	})
+
+}
 </script>
 </head>
 <body style="text-align: center">
@@ -27,6 +43,18 @@
 				<h2 align="center">${article.title }</h2><!-- 文章标题 -->
 			</dt>
 			<hr>
+			<dd id="mc">
+				<c:if test="${isCollect==1}">
+					<span style="font-size: 20px; color: red">★ (已收藏)</span>
+				</c:if>
+				
+				<c:if test="${isCollect!=1}">
+					<span style="font-size: 20px; color: blue;"> <a
+						href="javascript:collect()">☆ (未收藏)</a>
+					</span>
+				</c:if>
+
+			</dd>
 			<dd>
 				<fmt:formatDate value="${article.updated }"
 					pattern="yyyy-MM-dd HH:mm:ss" />

@@ -52,11 +52,12 @@
 
 			</c:when>
 			<c:otherwise>
+			<ul class="nav">
 					<%-- 未登录显示登录注册链接 --%>
 					<li class="nav-item"><a class="nav-link" href="/passport/reg">注册</a></li>
 					<li class="nav-item"><a class="nav-link" href="/passport/login">登录</a></li>
+					</ul>
 				</c:otherwise>
 			</c:choose>
-		</ul>
 	</nav>
 </div>

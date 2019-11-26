@@ -64,7 +64,7 @@
 						href="/admin/index"><span class="oi oi-monitor">&nbsp;后台首页</a></li>
 					<li class="nav-item"><a class="nav-link" href="#" data="/user/users">用户管理</a></li>
 					<li class="nav-item"><a class="nav-link" href="#" data="/article/articles">文章管理</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">友情链接</a></li>
+					<li class="nav-item"><a class="nav-link" href="#" data="/admin/links/selects">友情链接</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">分类管理</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">系统设置</a></li>
 				</ul>

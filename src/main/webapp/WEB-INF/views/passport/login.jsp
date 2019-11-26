@@ -34,7 +34,7 @@
 						<h5 align="center">用户登录</h5>
 					</div>
 					<div class="card-body">
-						<span style="color: red">${messages}</span>
+						<span style="color: red">${message}</span>
 						<form id="form1" action="/passport/login" method="post">
 							<div class="form-group">
 								<label>用户名:</label><input class="form-control" type="text" id="username" name="username" value="${username }">

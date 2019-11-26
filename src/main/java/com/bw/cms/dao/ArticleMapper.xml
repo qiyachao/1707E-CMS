@@ -56,6 +56,9 @@
   	<if test="deleted!=null">
   	and deleted =#{deleted}
   	</if>
+  	<if test="contentType!=null">
+  	and content_type =#{contentType}
+  	</if>
   	</where>
   	order by updated desc
   </select>

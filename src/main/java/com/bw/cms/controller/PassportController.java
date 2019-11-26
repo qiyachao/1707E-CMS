@@ -63,8 +63,8 @@ public class PassportController {
 		try {
 			boolean b = userService.insertSelective(userVO);//注册账号
 			if(b) {
-				redirectAttributes.addAttribute("username", userVO.getUsername());//重定向携带参数到登录页面
-				redirectAttributes.addAttribute("messages", "恭喜,注册成功");//重定向携带参数
+				redirectAttributes.addFlashAttribute("username", userVO.getUsername());//重定向携带参数到登录页面
+				redirectAttributes.addFlashAttribute("message", "恭喜,注册成功");//重定向携带参数
 				return "redirect:/passport/login";//注册成功,重定向到登录页面
 			}
 		} catch (CMSException e) {

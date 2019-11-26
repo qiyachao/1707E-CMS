@@ -138,7 +138,7 @@
 	}
 	//分页点击事件
 	function goPage(page){
-		var url = "/admin/article/articles?page="+page+"&title="+$("[name='title']").val()+"&status="+$("[name='status']").val();
+		var url = "/article/articles?page="+page+"&title="+$("[name='title']").val()+"&status="+$("[name='status']").val();
 		$("#center").load(url);
 	}
 	</script>

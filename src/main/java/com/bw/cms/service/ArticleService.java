@@ -9,7 +9,7 @@ import com.github.pagehelper.PageInfo;
 public interface ArticleService {
 	//文章列表
 	PageInfo<Article> selects(Article article, Integer page,Integer pageSize);
-	//修改
+	//修改状态
 	boolean update(ArticleWithBLOBs article);
 	
 	ArticleWithBLOBs selectByPrimaryKey(Integer id);
